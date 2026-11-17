@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="BOULDER: discover indoor bouldering, movement, technique, and climbing inspiration." name="description"/>
+  <title>Styles | BOULDER</title>
+  <link href="stylesheet.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Main navigation" class="navbar">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a aria-current="page" class="active" href="styles.html">Styles</a>
+     <a href="gallery.html">Gallery</a>
+     <a href="learn.html">Learn + Video</a>
+     <button aria-label="Switch colour theme" class="theme-toggle" type="button">
+      Light Mode
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero hero-inner" style="--hero-image:url('https://images.squarespace-cdn.com/content/v1/61437c5a14bef66af4c4c769/a00d66e5-da74-46f1-bcb1-0bb40dfd3a6f/_MG_1564.jpg')">
+    <div class="hero-content">
+     <p class="eyebrow">02 / MOVEMENT</p>
+     <h1>
+      FIND YOUR
+      <br/>
+      <em>STYLE.</em>
+     </h1>
+     <p class="hero-description">Climbing walls come in different angles, and each angle rewards different skills.</p>
+    </div>
+    <div class="hero-label">
+     MOVE • LEARN • CLIMB
+    </div>
+   </section>
+   <section class="section">
+    <div class="section-head">
+     <p class="eyebrow">CLIMBING TYPES</p>
+     <h2>
+      DIFFERENT WALLS.
+      <br/>
+      <em>DIFFERENT MOVES.</em>
+     </h2>
+     <p>Every climb combines technique and decision-making. These common types show how the wall changes the challenge.</p>
+    </div>
+    <div class="styles-list">
+     <article class="style-row">
+      <img alt="Indoor climber on a steep overhang" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/61437c5a14bef66af4c4c769/a00d66e5-da74-46f1-bcb1-0bb40dfd3a6f/_MG_1564.jpg"/>
+      <div>
+       <p class="eyebrow">01 / BODY TENSION</p>
+       <h3>OVERHANG</h3>
+       <p>Overhanging walls lean toward you. Keeping your hips close and using your feet well helps you avoid swinging away from the wall.</p>
+       <p>These problems often reward controlled pulling movements and strong body positioning.</p>
+      </div>
+     </article>
+     <article class="style-row reverse">
+      <img alt="Indoor bouldering wall with many holds" loading="lazy" src="https://vsclimbinggyms.com/gallery/bkbx/thumb-047.webp"/>
+      <div>
+       <p class="eyebrow">02 / TIMING</p>
+       <h3>DYNAMIC MOVEMENT</h3>
+       <p>Some climbing problems require a coordinated movement between holds. The goal is to move with control and choose the right timing.</p>
+       <p>Route reading helps you decide when a static movement or a coordinated movement makes sense.</p>
+      </div>
+     </article>
+     <article class="style-row">
+      <img alt="Climbing technique on an indoor wall" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/5fd272c74ca3807854977ddb/8e5bc75e-bd71-4d47-b3c4-4bdc6cb7e6a7/2023-05-14_NOBL-0008.jpg"/>
+      <div>
+       <p class="eyebrow">03 / PRECISION</p>
+       <h3>TECHNICAL CLIMBING</h3>
+       <p>Technical routes emphasize quiet feet, accurate positioning, and balance. A small shift in body position often changes how difficult a move feels.</p>
+       <p>Slab climbing, on walls that lean away from you, often puts these skills at the centre of the challenge.</p>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section class="closing-band">
+    <p>SEE THE MOVEMENT</p>
+    <h2>WATCH CLIMBING IN ACTION.</h2>
+    <a class="btn dark-btn" href="learn.html">Video and beginner guide →</a>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <p>
+     Explore. Challenge. Improve.
+     <br/>
+     One move at a time.
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>© 2026 BOULDER • A school web-design project</span>
+    <a href="index.html">Back to home ↑</a>
+   </div>
+  </footer>
+  <script>
+   // Theme switcher: shared across all pages.
+const themeButton = document.querySelector('.theme-toggle');
+function applyTheme(theme) {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  themeButton.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+applyTheme(localStorage.getItem('boulder-theme') || 'dark');
+themeButton.addEventListener('click', () => {
+  const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  localStorage.setItem('boulder-theme', next);
+  applyTheme(next);
+});
+  </script>
+ </body>
+</html>

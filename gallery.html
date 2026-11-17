@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="BOULDER: discover indoor bouldering, movement, technique, and climbing inspiration." name="description"/>
+  <title>Gallery | BOULDER</title>
+  <link href="stylesheet.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Main navigation" class="navbar">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="styles.html">Styles</a>
+     <a aria-current="page" class="active" href="gallery.html">Gallery</a>
+     <a href="learn.html">Learn + Video</a>
+     <button aria-label="Switch colour theme" class="theme-toggle" type="button">
+      Light Mode
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero hero-inner" style="--hero-image:url('https://vsclimbinggyms.com/gallery/bkbx/thumb-047.webp')">
+    <div class="hero-content">
+     <p class="eyebrow">03 / PHOTOGRAPHY</p>
+     <h1>
+      LIFE ON
+      <br/>
+      <em>THE WALL.</em>
+     </h1>
+     <p class="hero-description">A visual look at climbing gyms, holds, movement, and creativity.</p>
+    </div>
+    <div class="hero-label">
+     MOVE • LEARN • CLIMB
+    </div>
+   </section>
+   <section class="section">
+    <div class="section-head">
+     <p class="eyebrow">IMAGE GALLERY</p>
+     <h2>
+      THE CLIMBING
+      <em>GALLERY.</em>
+     </h2>
+     <p>Hover over the photos for an effect. Select a photo to view it larger.</p>
+    </div>
+    <div class="photo-grid">
+     <button aria-label="Expand photo: A colourful indoor bouldering space" class="photo-button" type="button">
+      <img alt="A colourful indoor bouldering space" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/6793d4db02d04a6b365ff624/1e3ca9d3-b123-4338-bf69-03563730dcb0/hang%2Bnose.jpg?format=2500w"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+     <button aria-label="Expand photo: Indoor climber on a wall" class="photo-button" type="button">
+      <img alt="Indoor climber on a wall" loading="lazy" src="https://images.unsplash.com/photo-1728000442481-20bf8df1d584?w=1300&amp;auto=format&amp;fit=crop&amp;q=85"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+     <button aria-label="Expand photo: Overhanging climbing route" class="photo-button" type="button">
+      <img alt="Overhanging climbing route" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/61437c5a14bef66af4c4c769/a00d66e5-da74-46f1-bcb1-0bb40dfd3a6f/_MG_1564.jpg"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+     <button aria-label="Expand photo: Colourful holds on an indoor climbing wall" class="photo-button" type="button">
+      <img alt="Colourful holds on an indoor climbing wall" loading="lazy" src="https://vsclimbinggyms.com/gallery/bkbx/thumb-047.webp"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+     <button aria-label="Expand photo: Climbing and movement" class="photo-button" type="button">
+      <img alt="Climbing and movement" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/5fd272c74ca3807854977ddb/8e5bc75e-bd71-4d47-b3c4-4bdc6cb7e6a7/2023-05-14_NOBL-0008.jpg"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+     <button aria-label="Expand photo: A climber testing a route" class="photo-button" type="button">
+      <img alt="A climber testing a route" loading="lazy" src="https://images.unsplash.com/photo-1728000442481-20bf8df1d584?w=1300&amp;auto=format&amp;fit=crop&amp;q=85"/>
+      <span>VIEW PHOTO ↗</span>
+     </button>
+    </div>
+   </section>
+   <div aria-label="Expanded climbing photo" aria-modal="true" class="lightbox" hidden="" id="lightbox" role="dialog">
+    <button aria-label="Close photo" class="lightbox-close" type="button">
+     ×
+    </button>
+    <img alt="" src=""/>
+   </div>
+   <script>
+    // Click an image to enlarge it. Click outside or press Escape to close.
+const lightbox = document.getElementById('lightbox');
+const expanded = lightbox.querySelector('img');
+const closeButton = lightbox.querySelector('.lightbox-close');
+let previousFocus = null;
+function closePhoto() { lightbox.hidden = true; expanded.src = ''; previousFocus?.focus(); }
+document.querySelectorAll('.photo-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const image = button.querySelector('img');
+    expanded.src = image.src;
+    expanded.alt = image.alt;
+    previousFocus = button;
+    lightbox.hidden = false;
+    closeButton.focus();
+  });
+});
+closeButton.addEventListener('click', closePhoto);
+lightbox.addEventListener('click', event => { if (event.target === lightbox) closePhoto(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && !lightbox.hidden) closePhoto(); });
+   </script>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <p>
+     Explore. Challenge. Improve.
+     <br/>
+     One move at a time.
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>© 2026 BOULDER • A school web-design project</span>
+    <a href="index.html">Back to home ↑</a>
+   </div>
+  </footer>
+  <script>
+   // Theme switcher: shared across all pages.
+const themeButton = document.querySelector('.theme-toggle');
+function applyTheme(theme) {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  themeButton.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+applyTheme(localStorage.getItem('boulder-theme') || 'dark');
+themeButton.addEventListener('click', () => {
+  const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  localStorage.setItem('boulder-theme', next);
+  applyTheme(next);
+});
+  </script>
+ </body>
+</html>

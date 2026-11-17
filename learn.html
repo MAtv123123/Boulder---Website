@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="BOULDER: discover indoor bouldering, movement, technique, and climbing inspiration." name="description"/>
+  <title>Learn | BOULDER</title>
+  <link href="stylesheet.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Main navigation" class="navbar">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="styles.html">Styles</a>
+     <a href="gallery.html">Gallery</a>
+     <a aria-current="page" class="active" href="learn.html">Learn + Video</a>
+     <button aria-label="Switch colour theme" class="theme-toggle" type="button">
+      Light Mode
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero hero-inner" style="--hero-image:url('https://images.squarespace-cdn.com/content/v1/5fd272c74ca3807854977ddb/8e5bc75e-bd71-4d47-b3c4-4bdc6cb7e6a7/2023-05-14_NOBL-0008.jpg')">
+    <div class="hero-content">
+     <p class="eyebrow">04 / WATCH + LEARN</p>
+     <h1>
+      YOUR FIRST
+      <br/>
+      <em>MOVES.</em>
+     </h1>
+     <p class="hero-description">Start with the basics: footwork, route reading, and controlled movement.</p>
+    </div>
+    <div class="hero-label">
+     MOVE • LEARN • CLIMB
+    </div>
+   </section>
+   <section class="section">
+    <div class="section-head">
+     <p class="eyebrow">FEATURED VIDEO</p>
+     <h2>
+      LEARN THE
+      <em>FOUNDATIONS.</em>
+     </h2>
+     <p>Movement for Climbers explains the basics of beginner bouldering, including climbing holds, technique, and the order of moves on a problem.</p>
+    </div>
+    <div class="video-layout">
+     <div class="video-wrap">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/tJNAC9zi8gg" title="Bouldering Progression Series - Novice (Movement for Climbers)">
+      </iframe>
+     </div>
+     <div class="video-details">
+      <p class="eyebrow">WATCH / BEGINNER</p>
+      <h3>BOULDERING PROGRESSION: NOVICE</h3>
+      <p>Watch how climbers approach easy problems and develop movement skills. Focus on foot placement, choosing holds, and staying balanced.</p>
+      <a class="text-link" href="https://www.youtube.com/watch?v=tJNAC9zi8gg" rel="noopener noreferrer" target="_blank">Watch on YouTube ↗</a>
+     </div>
+    </div>
+   </section>
+   <section class="section soft-section">
+    <div class="section-head">
+     <p class="eyebrow">BEFORE YOU CLIMB</p>
+     <h2>
+      FOUR
+      <em>STARTER TIPS.</em>
+     </h2>
+    </div>
+    <div class="info-grid four">
+     <article class="info-card">
+      <span>01</span>
+      <h3>Wear climbing shoes</h3>
+      <p>Many gyms rent shoes. Their grip and shape help with precise foot placement.</p>
+     </article>
+     <article class="info-card">
+      <span>02</span>
+      <h3>Start with easy climbs</h3>
+      <p>Use beginner problems to learn the hold colours, wall rules, and basic movement.</p>
+     </article>
+     <article class="info-card">
+      <span>03</span>
+      <h3>Learn safe descents</h3>
+      <p>Follow the gym's instructions, downclimb when appropriate, and learn how to use the padded landing area.</p>
+     </article>
+     <article class="info-card">
+      <span>04</span>
+      <h3>Take time to rest</h3>
+      <p>Pause between attempts and observe how other climbers move through a problem.</p>
+     </article>
+    </div>
+   </section>
+   <section class="section split-section">
+    <div class="content-stack">
+     <p class="eyebrow">NEXT STEP</p>
+     <h2>
+      READ THE ROUTE.
+      <br/>
+      <em>THEN MOVE.</em>
+     </h2>
+     <p>Before starting, identify the starting holds, the next few movements, and the finish. Look for footholds that support your balance. After an attempt, decide what worked and what you want to change.</p>
+     <p>Practice controlled movements and use the gym's safety briefing as your guide.</p>
+     <a class="text-link" href="styles.html">Discover climbing styles →</a>
+    </div>
+    <div class="feature-photo">
+     <img alt="Indoor climbing wall" loading="lazy" src="https://vsclimbinggyms.com/gallery/bkbx/thumb-047.webp"/>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <p>
+     Explore. Challenge. Improve.
+     <br/>
+     One move at a time.
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>© 2026 BOULDER • A school web-design project</span>
+    <a href="index.html">Back to home ↑</a>
+   </div>
+  </footer>
+  <script>
+   // Theme switcher: shared across all pages.
+const themeButton = document.querySelector('.theme-toggle');
+function applyTheme(theme) {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  themeButton.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+applyTheme(localStorage.getItem('boulder-theme') || 'dark');
+themeButton.addEventListener('click', () => {
+  const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  localStorage.setItem('boulder-theme', next);
+  applyTheme(next);
+});
+  </script>
+ </body>
+</html>

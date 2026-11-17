@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="BOULDER: discover indoor bouldering, movement, technique, and climbing inspiration." name="description"/>
+  <title>About | BOULDER</title>
+  <link href="stylesheet.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Main navigation" class="navbar">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a aria-current="page" class="active" href="about.html">About</a>
+     <a href="styles.html">Styles</a>
+     <a href="gallery.html">Gallery</a>
+     <a href="learn.html">Learn + Video</a>
+     <button aria-label="Switch colour theme" class="theme-toggle" type="button">
+      Light Mode
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero hero-inner" style="--hero-image:url('https://images.unsplash.com/photo-1728000442481-20bf8df1d584?w=1300&amp;auto=format&amp;fit=crop&amp;q=85')">
+    <div class="hero-content">
+     <p class="eyebrow">01 / INTRODUCTION</p>
+     <h1>
+      WHAT IS
+      <br/>
+      <em>BOULDERING?</em>
+     </h1>
+     <p class="hero-description">Learn how climbing problems test movement, balance, and decision-making.</p>
+    </div>
+    <div class="hero-label">
+     MOVE • LEARN • CLIMB
+    </div>
+   </section>
+   <section class="section split-section">
+    <div class="content-stack">
+     <p class="eyebrow">THE BASICS</p>
+     <h2>
+      SMALL WALL.
+      <br/>
+      <em>BIG CHALLENGE.</em>
+     </h2>
+     <p>Bouldering is a type of climbing done on shorter walls without ropes. Indoor bouldering gyms provide padded landing surfaces and routes made from coloured handholds and footholds.</p>
+     <p>
+      Each route is called a
+      <strong>problem</strong>
+      . You start at marked holds and work through a sequence of movements until you reach the finish. The challenge is to discover a sequence that works with your height, balance, and technique.
+     </p>
+     <p>Unlike rope climbing, bouldering usually involves short attempts followed by rest and another try. It is common to test several ideas on the same problem.</p>
+    </div>
+    <div class="feature-photo">
+     <img alt="Climber moving across a steep indoor wall" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/61437c5a14bef66af4c4c769/a00d66e5-da74-46f1-bcb1-0bb40dfd3a6f/_MG_1564.jpg"/>
+    </div>
+   </section>
+   <section class="section soft-section">
+    <div class="section-head">
+     <p class="eyebrow">WHY PEOPLE ENJOY IT</p>
+     <h2>
+      MORE THAN
+      <em>STRENGTH.</em>
+     </h2>
+    </div>
+    <div class="info-grid">
+     <article class="info-card">
+      <span>01</span>
+      <h3>Problem solving</h3>
+      <p>Reading a route encourages planning, trying different moves, and learning from each attempt.</p>
+     </article>
+     <article class="info-card">
+      <span>02</span>
+      <h3>Body control</h3>
+      <p>Precise footwork and balance help you move efficiently without relying only on your arms.</p>
+     </article>
+     <article class="info-card">
+      <span>03</span>
+      <h3>Community</h3>
+      <p>Climbers often share ideas and encourage one another while working on the same problems.</p>
+     </article>
+    </div>
+   </section>
+   <section class="section">
+    <div class="section-head">
+     <p class="eyebrow">CLIMBING LANGUAGE</p>
+     <h2>
+      KNOW THE
+      <em>TERMS.</em>
+     </h2>
+    </div>
+    <div class="definition-grid">
+     <div>
+      <h3>Problem</h3>
+      <p>A short climbing route with a defined start and finish.</p>
+     </div>
+     <div>
+      <h3>Beta</h3>
+      <p>Advice about the movements that help complete a problem.</p>
+     </div>
+     <div>
+      <h3>Crux</h3>
+      <p>The hardest move or sequence in a route.</p>
+     </div>
+     <div>
+      <h3>Top</h3>
+      <p>The finishing hold or finishing position of a problem.</p>
+     </div>
+    </div>
+    <a class="text-link" href="styles.html">Learn about wall styles →</a>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <p>
+     Explore. Challenge. Improve.
+     <br/>
+     One move at a time.
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>© 2026 BOULDER • A school web-design project</span>
+    <a href="index.html">Back to home ↑</a>
+   </div>
+  </footer>
+  <script>
+   // Theme switcher: shared across all pages.
+const themeButton = document.querySelector('.theme-toggle');
+function applyTheme(theme) {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  themeButton.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+applyTheme(localStorage.getItem('boulder-theme') || 'dark');
+themeButton.addEventListener('click', () => {
+  const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  localStorage.setItem('boulder-theme', next);
+  applyTheme(next);
+});
+  </script>
+ </body>
+</html>

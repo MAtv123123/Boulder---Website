@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="BOULDER: discover indoor bouldering, movement, technique, and climbing inspiration." name="description"/>
+  <title>Home | BOULDER</title>
+  <link href="stylesheet.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Main navigation" class="navbar">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <div class="nav-links">
+     <a aria-current="page" class="active" href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="styles.html">Styles</a>
+     <a href="gallery.html">Gallery</a>
+     <a href="learn.html">Learn + Video</a>
+     <button aria-label="Switch colour theme" class="theme-toggle" type="button">
+      Light Mode
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="hero hero-home" style="--hero-image:url('https://images.squarespace-cdn.com/content/v1/6793d4db02d04a6b365ff624/1e3ca9d3-b123-4338-bf69-03563730dcb0/hang%2Bnose.jpg?format=2500w')">
+    <div class="hero-content">
+     <p class="eyebrow">WELCOME TO BOULDER</p>
+     <h1>
+      REACH NEW
+      <br/>
+      <em>HEIGHTS.</em>
+     </h1>
+     <p class="hero-description">Bouldering is movement, strength, and problem-solving. Find your next challenge on the wall.</p>
+     <div class="hero-actions">
+      <a class="btn primary" href="about.html">Explore bouldering →</a>
+      <a class="btn outline" href="learn.html">Watch the video</a>
+     </div>
+    </div>
+    <div class="hero-label">
+     MOVE • LEARN • CLIMB
+    </div>
+   </section>
+   <section class="section home-intro">
+    <div class="section-head">
+     <p class="eyebrow">THE EXPERIENCE</p>
+     <h2>
+      ONE WALL.
+      <em>ENDLESS MOVES.</em>
+     </h2>
+     <p>Choose a route, read the holds, and make every movement count. Explore the site to discover the sport, learn techniques, and see climbing in action.</p>
+    </div>
+    <div class="tiles three">
+     <a class="image-tile" href="about.html">
+      <div class="image-frame">
+       <img alt="What is bouldering?" loading="lazy" src="https://images.unsplash.com/photo-1728000442481-20bf8df1d584?w=1300&amp;auto=format&amp;fit=crop&amp;q=85"/>
+      </div>
+      <div class="tile-copy">
+       <h3>What is bouldering?</h3>
+       <p>A short introduction to routes, grades, and movement.</p>
+       <span class="text-link">Read more →</span>
+      </div>
+     </a>
+     <a class="image-tile" href="styles.html">
+      <div class="image-frame">
+       <img alt="Explore styles" loading="lazy" src="https://images.squarespace-cdn.com/content/v1/61437c5a14bef66af4c4c769/a00d66e5-da74-46f1-bcb1-0bb40dfd3a6f/_MG_1564.jpg"/>
+      </div>
+      <div class="tile-copy">
+       <h3>Explore styles</h3>
+       <p>From balance-heavy slabs to powerful overhangs.</p>
+       <span class="text-link">Read more →</span>
+      </div>
+     </a>
+     <a class="image-tile" href="gallery.html">
+      <div class="image-frame">
+       <img alt="Climbing gallery" loading="lazy" src="https://vsclimbinggyms.com/gallery/bkbx/thumb-047.webp"/>
+      </div>
+      <div class="tile-copy">
+       <h3>Climbing gallery</h3>
+       <p>See the walls, holds, and creativity of bouldering.</p>
+       <span class="text-link">Read more →</span>
+      </div>
+     </a>
+    </div>
+   </section>
+   <section class="closing-band">
+    <p>READY TO LEARN?</p>
+    <h2>START WITH THE BASICS.</h2>
+    <a class="btn dark-btn" href="learn.html">Watch a beginner video →</a>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="logo" href="index.html">
+     BOULDER
+     <span>.</span>
+    </a>
+    <p>
+     Explore. Challenge. Improve.
+     <br/>
+     One move at a time.
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>© 2026 BOULDER • A school web-design project</span>
+    <a href="index.html">Back to home ↑</a>
+   </div>
+  </footer>
+  <script>
+   // Theme switcher: shared across all pages.
+const themeButton = document.querySelector('.theme-toggle');
+function applyTheme(theme) {
+  document.body.classList.toggle('light-mode', theme === 'light');
+  themeButton.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+applyTheme(localStorage.getItem('boulder-theme') || 'dark');
+themeButton.addEventListener('click', () => {
+  const next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  localStorage.setItem('boulder-theme', next);
+  applyTheme(next);
+});
+  </script>
+ </body>
+</html>
